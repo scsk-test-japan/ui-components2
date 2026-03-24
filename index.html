@@ -1201,5 +1201,16 @@
     setTimeout(() => el.remove(), 300);
   }
 </script>
+   // TOAST
+  function showToast(type, icon, msg) { ... }
+  function removeToast(el) { ... }
+
+  // iframeの高さを親ページに通知
+  function sendHeight() {
+    const h = document.documentElement.scrollHeight;
+    window.parent.postMessage({ frameHeight: h }, '*');
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
 </body>
 </html>
